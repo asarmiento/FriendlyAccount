@@ -1,0 +1,33 @@
+<article class="col-sm-4 padding-1">
+    <aside class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h3 class="panel-title text-center"><strong>{{ table.name }}</strong></h3>
+        </div>
+        <div class="panel-body">
+            <p>{{ order.qty }} - {{ menuRestaurant.name}}</p>
+            <table class="table table-bordered table-hover TableDetail">
+                <thead>
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Producto Cocido</th>
+                        <th>Hora de Pedido</th>
+                        <th>Realizado Por</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                        <tr>
+                            <td>{{#math this.pivot.amount "*" ../order.qty}}{{/math}}</td>
+                            <td>{{this.name}}</td>
+                            <td>{{../order.created_at}}</td>
+                            <td>{{../user_nameComplete}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <a id="cooked" class="btn btn-success" data-token="{{order.token}}">Cocinado</a>
+        </div>
+    </aside>
+</article>

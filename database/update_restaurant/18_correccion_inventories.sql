@@ -1,0 +1,1 @@
+ALTER TABLE `inventories` ADD `amount` INT(11) NOT NULL AFTER `raw_product_id`, ADD `created_at` INT(11) NOT NULL AFTER `amount`, ADD `updated_at` INT(11) NOT NULL AFTER `created_at`;

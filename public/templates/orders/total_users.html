@@ -1,0 +1,87 @@
+{{#clients_pay:i}}
+	<div class="row">
+		<p>{{ name }}</p>
+		<div class="col-sm-4 col-md-4">
+	        <div class="form-mep">
+	            <label>Total</label>
+	            <input class="form-control" type="text" value="{{ total }}" readonly>
+	        </div>
+	    </div>
+	    <div class="col-sm-4 col-md-4">
+	        <div class="form-mep">
+	            <label>Descuento (%)</label>
+	            <input class="form-control" type="number" name="discount" min="0" value="{{ discount }}">
+	        </div>
+	    </div>
+		<div class="col-sm-4 col-md-4">
+	        <div class="form-mep">
+	            <label>Total a pagar:</label>
+	            <input class="form-control" type="number" min="0" value="{{ total_pay }}" readonly>
+	        </div>
+	    </div>
+	    <div class="col-sm-4 col-md-4">
+	        <div class="form-mep">
+	            <label>Forma de Pago</label>
+	            <select name="paymentMethod" class="form-control" value="{{ paymentMethod }}">
+	                {{#payments_method}}
+	                    <option value="{{id}}">{{ name }}</option>
+	                {{/payments_method}}
+	            </select>
+	        </div>
+	    </div>
+	    <div class="col-sm-4 col-md-4 pay_t hide">
+	        <div class="form-mep">
+	            <label>Paga Con Tarjeta (₡)</label>
+	            <input class="form-control" min="1" type="number" step="0.01" name="pay_t" value="{{pay_t}}">
+	        </div>
+	    </div>
+	    <div class="col-sm-4 col-md-4 pay">
+	        <div class="form-mep">
+	            <label >Paga Con (₡)</label>
+	            <input class="form-control" min="1" type="number" step="0.01" name="pay" value="{{pay}}">
+	        </div>
+	    </div>
+	    <div class="col-sm-4 col-md-4 hide usd">
+	        <div class="form-mep">
+	            <label>Paga Con ($)</label>
+	            <input class="form-control" min="1" type="number" step="0.01" name="usd" value="{{usd}}">
+	        </div>
+	    </div>
+	    <div class="col-sm-4 col-md-4 change">
+	        <div class="form-mep">
+	            <label for="change">Vuelto en Colones</label>
+	            <div class="input-group">
+	                <span class="input-group-addon">₡</span>
+	                <input class="form-control" type="text" value="{{ change }}" readonly>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-sm-4 col-md-4 hide change_usd">
+	        <div class="form-mep">
+	            <label for="change_usd">Vuelto en Dólares</label>
+	            <div class="input-group">
+	                <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+	                <input class="form-control" type="text" value="{{ change_usd }}" readonly>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-sm-4 col-md-4">
+	        <div class="form-mep">
+	            <label for="missing">Faltante</label>
+	            <input class="form-control" type="number" name="missing" value="{{ missing }}">
+	        </div>
+	    </div>
+    </div>
+    <hr style="border-top: 1px solid #333333">
+{{/clients_pay}}
+<div class="row text-center">
+	<div class="col-sm-12 col-md-4 col-md-offset-4">
+        <div class="form-mep">
+            <label for="password">Contraseña para el descuento</label>
+            <input class="form-control" type="password" name="password" value="{{ password }}">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <a on-click="save" class="btn btn-success"><i class="fa fa-floppy-o"></i> Registrar</a>
+    </div>
+</div>

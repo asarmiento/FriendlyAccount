@@ -1,0 +1,49 @@
+<div class="print-invoice">
+	<div class="print-invoice-container">
+		<div class="header">
+			<p>{{ message.school.name }}</p>
+			<p>{{ message.school.charter }}</p>
+			<p>{{ message.school.address }}</p>
+			<p>FACTURA: {{ message.invoice.numeration}}</p>
+			<p>FECHA: {{#formatDate message.invoice.date}} {{/formatDate}}</p>
+			<p>A NOMBRE DE: {{message.invoice.client}}</p>
+			<p>{{ message.table.name }}</p>
+			<p>Mesero: {{ message.user }}</p>
+		</div>
+		<div class="content">
+			<hr/>
+			<div class='detail'>
+				<span class='bold qty-print'>CANT</span>
+				<span class='bold desc-print'>DESC</span>
+				<span class='bold total-print'>TOTAL</span>
+			</div>
+			<hr/>
+			{{#each message.orders}}
+				<div class="orders">
+					<span class="qty-print">{{ this.qty }}</span>
+					<span class="desc-print">{{#fixed this.menu_restaurant.name 15}}{{/fixed}}</span>
+					{{this.restaurant.money}}
+					{{#if_eq this.menu_restaurant.money 'colones' }}
+						<span class="price-print">{{#math this.qty "*" this.menu_restaurant.costo }} {{/math}}</span>
+					{{else}}
+						<span class="price-print">
+							{{#math this.menu_restaurant.costo "*" message.tc }}
+						</span>
+					{{/if_eq}}
+				</div>
+			{{/each}}
+			<hr/>
+			<div class="footer">
+				<div><span class='bold'>SUBTOTAL: </span>{{ message.invoice.subtotal }}</div>
+		        <div><span class='bold'>I.V.A: </span>{{ message.invoice.tax }}</div>
+		        <div><span class='bold'>I.S.V: </span>{{ message.invoice.service }}</div>
+		        <div><span class='bold'>TOTAL: </span>{{ message.invoice.total }}</div>
+		        <hr/>
+		        <div>GRAVADO</div>
+		        <div>Autorizado mediante oficio</div>
+		        <div>N° : 11-1997 de la D.G.T.D</div>
+		        <div>GRACIAS POR SU COMPRA</div>
+			</div>
+		</div>
+	</div>
+</div>

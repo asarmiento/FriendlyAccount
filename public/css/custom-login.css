@@ -1,0 +1,41 @@
+body {
+	background: url(../images/bg-login.jpg) center;
+	height: 100%;
+}
+
+.margin-top-login {
+	margin-top: 70px;
+}
+
+.margin-bottom-login {
+	margin-bottom: 70px;
+}
+
+.btn-primary-login {
+	background-color: #12517d;
+	border: none;
+	border-radius: 0px;
+}
+
+.panel-primary-login {
+	border-radius: 0px;
+	padding: 0px 20px 10px 20px;
+}
+
+.padding-15-l-r {
+	padding: 0px 40px;
+}
+
+.form-control-login {
+	border:1px solid #fff;
+	box-shadow: none; 
+}
+
+.panel-default-login {
+	border: none;
+}
+
+.box-login {
+	box-shadow: 0px 0px 20px #383838;
+	border-radius: 10px;
+}

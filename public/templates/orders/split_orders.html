@@ -1,0 +1,68 @@
+<div id="accounts">
+	{{#clients:i}}
+		<div class="col-md-3">
+			<div class="form-group">
+	    		<label for="text">Cliente:</label>
+	    		<input type="text" class="form-control" id="client{{i}}" value="{{ . }}">
+	  		</div>
+		</div>
+	{{/clients}}
+	<table class="table table-bordered table-hover TableDetail">
+        <thead>
+            <tr>
+                <th></th>
+                <th width="30">Cantidad</th>
+                <th>Menú</th>
+                <th>Costo Unitario</th>
+                <th>Moneda</th>
+                <th>Hora de Pedido</th>
+                <th>Realizado Por</th>
+                <th>Total ₡</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ #orders:i }}
+                <tr>
+                    {{#if split}}
+                        <td contenteditable>
+                            <button on-click="delete" href="#" class="btn btn-danger btn-xs">
+                                <i class="fa fa-trash-o"></i>
+                            </button>
+                        </td>
+                    {{else}}
+                        <td contenteditable></td>
+                    {{/if}}
+                    <td contenteditable><input type="text" min="1" class="form-control" value="{{total}}"></td>
+                    <td>{{menu_restaurant.name}}</td>
+                    <td>{{number_format(taxAdd(menu_restaurant.costo),0)}}</td>
+                    <td>{{menu_restaurant.money}}</td>
+                    <td class="clients" contenteditable>
+                    	<select class="form-control" height="20px">
+                    		{{ #clients:i}}
+                    		<option value="{{ i }}">{{ . }}</option>
+							{{ /clients }}                    		
+                    	</select>
+                    </td>
+                    <td>{{user.name + " " + user.last}}</td>
+                    <td>
+                        {{ #if menu_restaurant.money == 'dolares' }}
+                            {{ number_format(taxAdd(menu_restaurant.costo) * exchange * total,0) }}
+                        {{ else }}
+                            {{number_format(taxAdd(menu_restaurant.costo) * total,0)}}
+                        {{ /if }}
+                    </td>
+                </tr>
+            {{ /orders }}
+            <tr>
+                <td colspan="7" class="text-right">Subtotal:</td>
+                <td class="text-left">{{ number_format(taxAdd(subtotal()),0) }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+        <a on-click="calculate" class="btn btn-primary"><i class="fa fa-usd"></i> Calcular Monto a Pagar</a>
+    </div>
+</div>
+<div id="total_user">
+    
+</div>

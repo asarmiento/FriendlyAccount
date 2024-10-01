@@ -1,0 +1,12 @@
+ALTER TABLE `supports` CHANGE `created_at` `created_at` TIMESTAMP NOT NULL, CHANGE `updated_at` `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE `deposits` CHANGE `created_at` `created_at` TIMESTAMP NOT NULL, CHANGE `updated_at` `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+UPDATE `deposits` SET `date` = '2015-01-31' WHERE `deposits`.`id` = 91;
+UPDATE `deposits` SET `date` = '2015-04-30' WHERE `deposits`.`id` = 223;
+UPDATE `deposits` SET `account` = '25';
+ALTER TABLE `deposits` CHANGE `account` `catalog_id` INT(11) NOT NULL;
+ALTER TABLE `deposits` CHANGE `catalog_id` `catalog_id` INT(10) NOT NULL;
+ALTER TABLE `deposits` ADD `type` ENUM('receipt','court') NOT NULL AFTER `codeReceipt`;
+ALTER TABLE `cashes` CHANGE `updated_at` `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE `cashes` ADD `type` ENUM('receipt','court') NOT NULL AFTER `amount`;
+ALTER TABLE `deposits` CHANGE `type` `type` ENUM('receipt','court') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'receipt';
+ALTER TABLE `cashes` ADD `deleted_at` TIMESTAMP NULL AFTER `school_id`;

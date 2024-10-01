@@ -1,0 +1,1 @@
+1. solo salgan las cuentas de grupos al crear

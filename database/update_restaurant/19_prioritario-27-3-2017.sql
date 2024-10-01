@@ -1,0 +1,2 @@
+ALTER TABLE raw_products DROP INDEX raw_products_code_unique;
+ALTER TABLE raw_products DROP INDEX raw_products_description_unique;

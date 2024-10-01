@@ -1,0 +1,1 @@
+ALTER TABLE `invoices` ADD `status` ENUM('activo','inactivo') NOT NULL AFTER `user_id`;

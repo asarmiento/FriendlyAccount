@@ -1,0 +1,31 @@
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+var address = 'http://10.10.10.104/cgi-bin/epos/service.cgi?devid=local_printer&timeout=60000';
+
+var builder = new epson.ePOSBuilder();
+builder.addFeedLine(3);
+builder.addTextFont(builder.FONT_C);
+builder.addTextAlign(builder.ALIGN_CENTER);
+builder.addTextSize(2, 2);
+builder.addText('Pedido Barra-bar 1\n');
+builder.addText('------------------------\n');
+builder.addTextLineSpace(30);
+builder.addTextLineSpace(30);
+builder.addTextAlign(builder.ALIGN_LEFT);
+builder.addText('Mesero: \n\n');
+builder.addText('Hora: \n');
+builder.addText('------------------------\n');
+builder.addTextDouble(true, true);
+builder.addText('1 ARROZ CON CALAMARES \n');
+builder.addText('1 ARROZ CON CAMARONES \n');
+builder.addText('1 IMPERIAL \n');
+builder.addFeed();
+builder.addText('------------------------\n');
+builder.addFeed();
+builder.addCut(builder.CUT_FEED);
+
+var epos = new epson.ePOSPrint(address);
+epos.onreceive = function (res) { alert(res.success); };
+epos.onerror = function (err) { alert(err.status); };
+epos.oncoveropen = function () { alert('coveropen'); };
+epos.send(builder.toString());
