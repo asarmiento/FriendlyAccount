@@ -118,19 +118,21 @@ class ClosedYearController extends Controller
         $closedYears = AccountingPeriod::where('school_id',userSchool()->id)->orderBy('id', 'desc')->first();
         $year = $closedYears->year;
         Log::info("Ano ".json_encode($year));
-        Log::info("Ano ".json_encode(AccountingPeriod::where('school_id',userSchool()->id)->where('period',$year.'12')->first()));
+        Log::info("Ano ".json_encode($closedYears));
+        $lastYear = AccountingPeriod::where('school_id',userSchool()->id)->where('period',$year.'12')->first();
         $error = "El sistema no esta en el mes de cierre adecuado o tiene algun otro problema puede contactar soporte: WhatsApp +506 8304-5030, Email: soporte@sistemasamigables.com";
-        if(AccountingPeriod::where('school_id',userSchool()->id)->where('period',$year.'12')->first() == null){
+        if($lastYear == null){
             return view('Accounting.closedYear.index', compact('closedYears', 'year','error'));
         }
         $error = null;
         Session::put('idFiscal',$closedYears->id);
         Session::put('year',$year);
         Session::put('periodo','12-'.$year);
-        Session::put('periodoId',AccountingPeriod::where('school_id',userSchool()->id)->where('period',$year.'12')->first()->id);
+        Session::put('periodoId',$lastYear->id);
         Session::put('dateFiscal',$year.'-12-31');
+        Log::info("Ano ".json_encode($lastYear->id));
 
-      //  $this->schoolsMonthsFiscalRepository->lastFiscal(Session::get('year'))->id;
+        //  $this->schoolsMonthsFiscalRepository->lastFiscal(Session::get('year'))->id;
         return view('Accounting.closedYear.index', compact('closedYears', 'year', 'error'));
     }
 
