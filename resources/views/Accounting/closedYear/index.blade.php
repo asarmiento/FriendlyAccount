@@ -36,10 +36,10 @@
 								Iniciaremos haciendo una serie de verificaciones, para estar seguros que todos los datos sean correctos.
 							</h4>
 							<h4 class="text-center u-color-black">
-								Estaremos Haciendo el Cierre de {{changeLetterMonth($closedYears->month_first)}} - {{$closedYears->year}} a {{changeLetterMonth($closedYears->month_end)}} {{$closedYears->year}}
+								Estaremos Haciendo el Cierre de {{changeLetterMonth($fiscal->month_first)}} - {{$fiscal->year}} a {{changeLetterMonth($fiscal->month_end)}} {{$fiscal->year}}
 								<input type="hidden" id="year_fiscal" value="{{$closedYears->year}}">
-								<input type="hidden" id="month_first" value="{{$closedYears->month_first}}">
-								<input type="hidden" id="month_end" value="{{$closedYears->month_end}}">
+								<input type="hidden" id="month_first" value="{{$fiscal->month_first}}">
+								<input type="hidden" id="month_end" value="{{$fiscal->month_end}}">
 							</h4>
 						</div>
 					</div>

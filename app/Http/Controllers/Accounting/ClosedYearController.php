@@ -119,7 +119,7 @@ class ClosedYearController extends Controller
         $id = userSchool()->id;
         $closedYears = AccountingPeriod::where('school_id',$id)->orderBy('id', 'desc')->first();
         $year = $closedYears->year;
-        Log::info("Ano ".json_encode($year));
+        Log::info("Ano ".json_encode(userSchool()));
         Log::info("Ano ".json_encode($closedYears));
         $lastYear = AccountingPeriod::where('school_id',$id)->where('period',$year.'12')->first();
         $error = "El sistema no esta en el mes de cierre adecuado o tiene algun otro problema puede contactar soporte: WhatsApp +506 8304-5030, Email: soporte@sistemasamigables.com";
@@ -136,7 +136,7 @@ class ClosedYearController extends Controller
 
       $fiscal =  SchoolsMonthsFiscal::where('year',$year)->where('school_id',$id)->first();
         \Log::info("Ano ".json_encode($fiscal).' -- '.Session::get('year'));
-        return view('Accounting.closedYear.index', compact('closedYears', 'year', 'error'));
+        return view('Accounting.closedYear.index', compact('closedYears','fiscal', 'year', 'error'));
     }
 
     public function validatePass(Request $request){
