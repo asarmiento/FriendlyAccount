@@ -26,7 +26,7 @@ use Illuminate\Http\Request;
 use AccountHon\Http\Requests;
 use AccountHon\Http\Controllers\Controller;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -130,9 +130,9 @@ class ClosedYearController extends Controller
         Session::put('periodo','12-'.$year);
         Session::put('periodoId',$lastYear->id);
         Session::put('dateFiscal',$year.'-12-31');
-        Log::info("Ano ".json_encode($lastYear->id));
+        \Log::info("Ano ".json_encode($lastYear->id).' -- '.Session::get('year'));
 
-        //  $this->schoolsMonthsFiscalRepository->lastFiscal(Session::get('year'))->id;
+          $this->schoolsMonthsFiscalRepository->lastFiscal(Session::get('year'))->id;
         return view('Accounting.closedYear.index', compact('closedYears', 'year', 'error'));
     }
 
