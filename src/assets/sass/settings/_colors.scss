@@ -1,0 +1,63 @@
+// ==========================================================================
+// COLORS - CORPORATE COLOR SYSTEM
+// ==========================================================================
+
+// Primary brand colors (based on existing #003e59)
+$color-primary-900: #001a26 !default;  // Darkest
+$color-primary-800: #002d3f !default;
+$color-primary-700: #003e59 !default;  // Main brand color (existing)
+$color-primary-600: #004f73 !default;
+$color-primary-500: #00608d !default;
+$color-primary-400: #2a7ba7 !default;
+$color-primary-300: #5496c1 !default;
+$color-primary-200: #7eb1db !default;
+$color-primary-100: #a8ccf5 !default;
+$color-primary-50: #d2e7ff !default;   // Lightest
+
+// Secondary colors (refined from existing palette)
+$color-secondary-blue: #4a90e2 !default;      // Professional blue
+$color-secondary-green: #27ae60 !default;     // Success green
+$color-secondary-orange: #f39c12 !default;    // Warning orange
+$color-secondary-red: #e74c3c !default;       // Error red
+$color-secondary-purple: #8e44ad !default;    // Accent purple
+
+// Neutral colors (refined grays)
+$color-neutral-900: #1a1a1a !default;
+$color-neutral-800: #2d2d2d !default;
+$color-neutral-700: #404040 !default;
+$color-neutral-600: #6b7280 !default;
+$color-neutral-500: #9ca3af !default;
+$color-neutral-400: #d1d5db !default;
+$color-neutral-300: #e5e7eb !default;
+$color-neutral-200: #f3f4f6 !default;
+$color-neutral-100: #f9fafb !default;
+$color-neutral-50: #ffffff !default;
+
+// Semantic colors
+$color-success: $color-secondary-green !default;
+$color-warning: $color-secondary-orange !default;
+$color-error: $color-secondary-red !default;
+$color-info: $color-secondary-blue !default;
+
+// Background colors
+$color-bg-primary: $color-neutral-50 !default;
+$color-bg-secondary: $color-neutral-100 !default;
+$color-bg-tertiary: $color-neutral-200 !default;
+$color-bg-dark: $color-primary-700 !default;
+
+// Text colors
+$color-text-primary: $color-neutral-900 !default;
+$color-text-secondary: $color-neutral-600 !default;
+$color-text-tertiary: $color-neutral-500 !default;
+$color-text-inverse: $color-neutral-50 !default;
+
+// Border colors
+$color-border-primary: $color-neutral-300 !default;
+$color-border-secondary: $color-neutral-200 !default;
+$color-border-focus: $color-primary-500 !default;
+
+// Legacy color mappings (for backward compatibility)
+$color-legacy-azul: #4a90e2 !default;
+$color-legacy-rojo: #e74c3c !default;
+$color-legacy-morado: #8e44ad !default;
+$color-legacy-amarillo: #f1c40f !default; 

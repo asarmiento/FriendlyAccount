@@ -1,0 +1,15 @@
+// ==========================================================================
+// PAGE ELEMENTS - BASE HTML ELEMENTS
+// ==========================================================================
+
+html {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-weight: $font-weight-regular;
+  color: $color-text-primary;
+  background-color: $color-bg-secondary;
+} 

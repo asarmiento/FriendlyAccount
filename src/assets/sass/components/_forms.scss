@@ -1,0 +1,19 @@
+// ==========================================================================
+// FORM COMPONENTS - FORM COMPONENTS
+// ==========================================================================
+
+.form-group {
+  margin-bottom: $spacing-4;
+}
+
+.form-control {
+  @include input-base;
+}
+
+.form-label {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin-bottom: $spacing-2;
+} 

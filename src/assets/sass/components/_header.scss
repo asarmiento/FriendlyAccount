@@ -1,0 +1,198 @@
+// ==========================================================================
+// HEADER - CORPORATE PAGE HEADER
+// ==========================================================================
+
+.header {
+  background: $color-bg-primary;
+  border-bottom: 1px solid $color-border-secondary;
+  padding: $spacing-4 $spacing-6;
+  margin-bottom: $spacing-6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-4;
+  }
+
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child)::after {
+        content: '/';
+        margin: 0 $spacing-2;
+        color: $color-text-tertiary;
+      }
+
+      &:last-child {
+        color: $color-text-primary;
+        font-weight: $font-weight-medium;
+      }
+    }
+
+    &-link {
+      color: $color-text-secondary;
+      text-decoration: none;
+      transition: $global-transition;
+
+      &:hover {
+        color: $color-primary-600;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    padding: $spacing-2 $spacing-3;
+    border-radius: $global-radius;
+    background: $color-bg-secondary;
+    color: $color-text-primary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    
+    &-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: $color-primary-600;
+      color: $color-text-inverse;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+
+      @include media-down(sm) {
+        display: none;
+      }
+    }
+
+    &-name {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      color: $color-text-primary;
+      @include truncate;
+    }
+
+    &-role {
+      font-size: $font-size-xs;
+      color: $color-text-tertiary;
+      @include truncate;
+    }
+  }
+
+  &__period {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2;
+    padding: $spacing-2 $spacing-3;
+    background: rgba(74, 144, 226, 0.1);
+    color: $color-secondary-blue;
+    border-radius: $global-radius;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+
+    i {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin-top: $spacing-4;
+    padding-top: $spacing-4;
+    border-top: 1px solid $color-border-secondary;
+
+    h1, h2 {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin: 0;
+    }
+
+    @include media-up(md) {
+      width: auto;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+
+      h1, h2 {
+        font-size: $font-size-xl;
+      }
+    }
+  }
+}
+
+// Legacy class mappings for backward compatibility
+.page {
+  @extend .header;
+
+  h2 {
+    @extend .header__title;
+    
+    font-size: $font-size-xl;
+    margin: 0;
+    padding: $spacing-2 0;
+    color: $color-text-primary;
+  }
+
+  li {
+    @extend .header__breadcrumb-item;
+    
+    a {
+      @extend .header__breadcrumb-link;
+    }
+  }
+}
+
+.message {
+  @extend .header__container;
+  
+  background: $color-bg-secondary;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  padding: $spacing-3;
+  border-radius: $global-radius;
+  margin-bottom: $spacing-4;
+
+  .col-md-4 {
+    padding-left: $spacing-3;
+
+    span {
+      color: $color-primary-600;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  .glyphicon {
+    margin-right: $spacing-2;
+  }
+} 

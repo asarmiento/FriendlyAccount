@@ -1,0 +1,25 @@
+// ==========================================================================
+// NAVIGATION - NAVIGATION COMPONENTS
+// ==========================================================================
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  display: inline-block;
+}
+
+.nav__link {
+  display: block;
+  padding: $spacing-2 $spacing-4;
+  color: $color-text-secondary;
+  text-decoration: none;
+  transition: $global-transition;
+
+  &:hover {
+    color: $color-primary-600;
+  }
+} 

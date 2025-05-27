@@ -1,1 +1,0 @@
-ALTER TABLE `settings` ADD `orderSeat` INT(1) NOT NULL AFTER `type_seat_id`;

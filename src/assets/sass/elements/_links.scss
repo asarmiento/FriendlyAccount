@@ -1,0 +1,19 @@
+// ==========================================================================
+// LINKS - LINK ELEMENTS
+// ==========================================================================
+
+a {
+  color: $color-primary-600;
+  text-decoration: none;
+  transition: $global-transition;
+
+  &:hover {
+    color: $color-primary-800;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px solid $color-border-focus;
+    outline-offset: 2px;
+  }
+} 

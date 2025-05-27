@@ -1,0 +1,12 @@
+// ==========================================================================
+// VISIBILITY UTILITIES - VISIBILITY CLASSES
+// ==========================================================================
+
+.show { display: block !important; }
+.hide { display: none !important; }
+.invisible { visibility: hidden !important; }
+.visible { visibility: visible !important; }
+
+// Legacy classes
+.ocultar { display: none !important; }
+.mostrar { display: block !important; } 

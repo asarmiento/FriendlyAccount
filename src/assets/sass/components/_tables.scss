@@ -1,0 +1,32 @@
+// ==========================================================================
+// TABLE COMPONENTS - TABLE COMPONENTS
+// ==========================================================================
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+  background: $color-bg-primary;
+  border-radius: $global-radius;
+  overflow: hidden;
+  box-shadow: $global-box-shadow;
+
+  th,
+  td {
+    padding: $spacing-3;
+    text-align: left;
+    border-bottom: 1px solid $color-border-secondary;
+  }
+
+  th {
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    background-color: $color-bg-tertiary;
+  }
+
+  &--striped {
+    tbody tr:nth-child(even) {
+      background-color: $color-bg-secondary;
+    }
+  }
+} 

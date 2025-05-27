@@ -1,0 +1,55 @@
+// ==========================================================================
+// COLOR UTILITIES - DIRECT COLOR CLASSES
+// ==========================================================================
+
+// Background color utilities
+.bg-primary { background-color: $color-primary-600 !important; }
+.bg-secondary { background-color: $color-neutral-600 !important; }
+.bg-success { background-color: $color-success !important; }
+.bg-warning { background-color: $color-warning !important; }
+.bg-danger { background-color: $color-error !important; }
+.bg-info { background-color: $color-info !important; }
+.bg-light { background-color: $color-neutral-100 !important; }
+.bg-dark { background-color: $color-neutral-800 !important; }
+.bg-white { background-color: $color-neutral-50 !important; }
+
+// Text color utilities
+.text-primary { color: $color-primary-600 !important; }
+.text-secondary { color: $color-text-secondary !important; }
+.text-success { color: $color-success !important; }
+.text-warning { color: $color-warning !important; }
+.text-danger { color: $color-error !important; }
+.text-info { color: $color-info !important; }
+.text-light { color: $color-neutral-400 !important; }
+.text-dark { color: $color-text-primary !important; }
+.text-white { color: $color-text-inverse !important; }
+.text-muted { color: $color-text-tertiary !important; }
+
+// Legacy color classes for backward compatibility
+.azul {
+  background-color: $color-legacy-azul !important;
+  color: $color-text-inverse !important;
+}
+
+.rojo {
+  background-color: $color-legacy-rojo !important;
+  color: $color-text-inverse !important;
+}
+
+.morado {
+  background-color: $color-legacy-morado !important;
+  color: $color-text-inverse !important;
+}
+
+.amarillo {
+  background-color: $color-legacy-amarillo !important;
+  color: $color-neutral-900 !important;
+}
+
+.green {
+  color: $color-success !important;
+}
+
+.red {
+  color: $color-error !important;
+} 

@@ -1,0 +1,32 @@
+// ==========================================================================
+// VARIABLES - GLOBAL SYSTEM SETTINGS
+// ==========================================================================
+
+// Base settings
+$global-radius: 8px !default;
+$global-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !default;
+$global-box-shadow: 0 2px 8px rgba(0, 62, 89, 0.1) !default;
+$global-box-shadow-hover: 0 4px 16px rgba(0, 62, 89, 0.15) !default;
+$global-border-width: 1px !default;
+
+// Z-index scale
+$z-index-dropdown: 1000 !default;
+$z-index-sticky: 1010 !default;
+$z-index-fixed: 1020 !default;
+$z-index-modal-backdrop: 1030 !default;
+$z-index-modal: 1040 !default;
+$z-index-popover: 1050 !default;
+$z-index-tooltip: 1060 !default;
+
+// Animation durations
+$animation-duration-fast: 0.15s !default;
+$animation-duration-base: 0.3s !default;
+$animation-duration-slow: 0.5s !default;
+
+// Container widths
+$container-max-width: 1200px !default;
+$container-padding: 1.5rem !default;
+
+// Sidebar
+$sidebar-width: 260px !default;
+$sidebar-width-collapsed: 60px !default; 

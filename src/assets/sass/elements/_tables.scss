@@ -1,0 +1,22 @@
+// ==========================================================================
+// TABLES - TABLE ELEMENTS
+// ==========================================================================
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+}
+
+th,
+td {
+  padding: $spacing-3;
+  text-align: left;
+  border-bottom: 1px solid $color-border-secondary;
+}
+
+th {
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  background-color: $color-bg-tertiary;
+}

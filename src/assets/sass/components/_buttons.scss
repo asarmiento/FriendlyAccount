@@ -1,0 +1,246 @@
+// ==========================================================================
+// BUTTONS - CORPORATE BUTTON SYSTEM
+// ==========================================================================
+
+.btn {
+  @include button-base;
+  @include button-size(base);
+
+  // Button sizes
+  &--xs {
+    @include button-size(xs);
+  }
+
+  &--sm {
+    @include button-size(sm);
+  }
+
+  &--lg {
+    @include button-size(lg);
+  }
+
+  // Button variants
+  &--primary {
+    @include button-variant($color-primary-600);
+  }
+
+  &--secondary {
+    @include button-variant($color-neutral-600);
+  }
+
+  &--success {
+    @include button-variant($color-success);
+  }
+
+  &--warning {
+    @include button-variant($color-warning, $color-neutral-900);
+  }
+
+  &--danger {
+    @include button-variant($color-error);
+  }
+
+  &--info {
+    @include button-variant($color-info);
+  }
+
+  // Button styles
+  &--outline {
+    background: transparent;
+    border: 1px solid currentColor;
+    
+    &.btn--primary {
+      color: $color-primary-600;
+      border-color: $color-primary-600;
+      
+      &:hover:not(:disabled) {
+        background: $color-primary-600;
+        color: $color-text-inverse;
+      }
+    }
+
+    &.btn--secondary {
+      color: $color-neutral-600;
+      border-color: $color-neutral-600;
+      
+      &:hover:not(:disabled) {
+        background: $color-neutral-600;
+        color: $color-text-inverse;
+      }
+    }
+
+    &.btn--success {
+      color: $color-success;
+      border-color: $color-success;
+      
+      &:hover:not(:disabled) {
+        background: $color-success;
+        color: $color-text-inverse;
+      }
+    }
+
+    &.btn--warning {
+      color: $color-warning;
+      border-color: $color-warning;
+      
+      &:hover:not(:disabled) {
+        background: $color-warning;
+        color: $color-neutral-900;
+      }
+    }
+
+    &.btn--danger {
+      color: $color-error;
+      border-color: $color-error;
+      
+      &:hover:not(:disabled) {
+        background: $color-error;
+        color: $color-text-inverse;
+      }
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $color-text-secondary;
+    
+    &:hover:not(:disabled) {
+      background: $color-bg-tertiary;
+      color: $color-text-primary;
+    }
+  }
+
+  &--link {
+    background: transparent;
+    border: none;
+    color: $color-primary-600;
+    text-decoration: underline;
+    
+    &:hover:not(:disabled) {
+      color: $color-primary-800;
+      background: transparent;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  // Button with icon
+  &--icon {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+
+    i {
+      font-size: 0.9em;
+    }
+
+    &.btn--icon-only {
+      padding: $spacing-3;
+      aspect-ratio: 1;
+      
+      span {
+        @include visually-hidden;
+      }
+    }
+  }
+
+  // Block button
+  &--block {
+    width: 100%;
+  }
+
+  // Loading state
+  &--loading {
+    position: relative;
+    color: transparent;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+// Button group
+.btn-group {
+  display: inline-flex;
+  border-radius: $global-radius;
+  overflow: hidden;
+  box-shadow: $global-box-shadow;
+
+  .btn {
+    border-radius: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+    &:first-child {
+      border-radius: $global-radius 0 0 $global-radius;
+    }
+
+    &:last-child {
+      border-radius: 0 $global-radius $global-radius 0;
+      border-right: none;
+    }
+
+    &:only-child {
+      border-radius: $global-radius;
+    }
+  }
+}
+
+// Legacy button classes for backward compatibility
+.btn-primary {
+  @extend .btn;
+  @extend .btn--primary;
+}
+
+.btn-secondary {
+  @extend .btn;
+  @extend .btn--secondary;
+}
+
+.btn-success {
+  @extend .btn;
+  @extend .btn--success;
+}
+
+.btn-warning {
+  @extend .btn;
+  @extend .btn--warning;
+}
+
+.btn-danger {
+  @extend .btn;
+  @extend .btn--danger;
+}
+
+.btn-info {
+  @extend .btn;
+  @extend .btn--info;
+}
+
+.btn-sm {
+  @extend .btn--sm;
+}
+
+.btn-lg {
+  @extend .btn--lg;
+}
+
+.btn-block {
+  @extend .btn--block;
+} 

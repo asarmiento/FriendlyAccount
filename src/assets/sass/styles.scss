@@ -1,0 +1,130 @@
+// ==========================================================================
+// FRIENDLY MODULES - CORPORATE DESIGN SYSTEM
+// ==========================================================================
+
+// SETTINGS
+// Global variables, site-wide settings, config switches, etc.
+@import 'settings/variables';
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/spacing';
+@import 'settings/breakpoints';
+
+// TOOLS
+// Site-wide mixins and functions.
+@import 'tools/mixins';
+@import 'tools/functions';
+
+// GENERIC
+// Low-specificity, far-reaching rulesets (e.g. resets).
+@import 'generic/normalize';
+@import 'generic/reset';
+@import 'generic/box-sizing';
+
+// ELEMENTS
+// Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+@import 'elements/page';
+@import 'elements/headings';
+@import 'elements/links';
+@import 'elements/forms';
+@import 'elements/tables';
+
+// OBJECTS
+// Objects, abstractions, and design patterns (e.g. .media {}).
+@import 'objects/wrapper';
+@import 'objects/layout';
+@import 'objects/grid';
+@import 'objects/media';
+
+// COMPONENTS
+// Discrete, complete chunks of UI (e.g. .carousel {}).
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/navigation';
+@import 'components/sidebar';
+@import 'components/header';
+@import 'components/cards';
+@import 'components/tables';
+@import 'components/modals';
+@import 'components/alerts';
+
+// UTILITIES
+// High-specificity, very explicit selectors that trump everything else.
+@import 'utilities/widths';
+@import 'utilities/headings';
+@import 'utilities/spacing';
+@import 'utilities/colors';
+@import 'utilities/typography';
+@import 'utilities/visibility';
+
+.azul {
+  background-color: #83c3ea;
+  color: #ffffff;
+}
+.rojo {
+  background-color: #f08787;
+  color: #ffffff;
+}
+.morado {
+  background-color: #b295d6;
+  color: #ffffff;
+}
+  .amarillo{
+  background-color: #f4f4aa;
+  color: #000000;
+}
+
+ .content-box-blue,
+ .content-box-gray,
+ .content-box-green,
+ .content-box-purple,
+ .content-box-red,
+ .content-box-yellow {
+   margin: 0 0 25px;
+   overflow: hidden;
+   padding: 20px;
+ }
+
+ .content-box-blue {
+   background-color: #d8ecf7;
+   border: 1px solid #afcde3;
+ }
+
+ .content-box-gray {
+   background-color: #e2e2e2;
+   border: 1px solid #bdbdbd;
+ }
+ .content-box-green {
+   background-color: #d9edc2;
+   border: 1px solid #b2ce96;
+ }
+ .content-box-purple {
+   background-color: #e2e2f9;
+   border: 1px solid #bebde9;
+ }
+
+ .content-box-red {
+   background-color: #f9dbdb;
+   border: 1px solid #e9b3b3;
+ }
+
+ .content-box-yellow {
+   background-color: #fef5c4;
+   border: 1px solid #fadf98;
+ }
+
+// ==========================================================================
+// LEGACY STYLES - BACKWARD COMPATIBILITY
+// ==========================================================================
+// These styles are maintained for backward compatibility with existing code
+
+.line-box-content{
+  height: 2px;
+  border: 0;
+  color: #000000;
+  background-color: #b6b6b6;
+}
+
+.font-text-size{
+  font-size: 24px;
+}

@@ -1,0 +1,200 @@
+// ==========================================================================
+// CARDS - CORPORATE CARD COMPONENTS
+// ==========================================================================
+
+.card {
+  @include card;
+  margin-bottom: $spacing-6;
+
+  &__header {
+    padding: $spacing-4 $spacing-6;
+    border-bottom: 1px solid $color-border-secondary;
+    background: $color-bg-secondary;
+
+    &-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+      margin: 0;
+    }
+
+    &-subtitle {
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+      margin: $spacing-1 0 0 0;
+    }
+  }
+
+  &__body {
+    padding: $spacing-6;
+  }
+
+  &__footer {
+    padding: $spacing-4 $spacing-6;
+    border-top: 1px solid $color-border-secondary;
+    background: $color-bg-secondary;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $spacing-3;
+  }
+
+  // Card variants with semantic colors
+  &--primary {
+    border-color: $color-primary-300;
+    
+    .card__header {
+      background: $color-primary-50;
+      border-bottom-color: $color-primary-200;
+    }
+  }
+
+  &--success {
+    border-color: rgba(39, 174, 96, 0.3);
+    
+    .card__header {
+      background: rgba(39, 174, 96, 0.05);
+      border-bottom-color: rgba(39, 174, 96, 0.2);
+    }
+  }
+
+  &--warning {
+    border-color: rgba(243, 156, 18, 0.3);
+    
+    .card__header {
+      background: rgba(243, 156, 18, 0.05);
+      border-bottom-color: rgba(243, 156, 18, 0.2);
+    }
+  }
+
+  &--danger {
+    border-color: rgba(231, 76, 60, 0.3);
+    
+    .card__header {
+      background: rgba(231, 76, 60, 0.05);
+      border-bottom-color: rgba(231, 76, 60, 0.2);
+    }
+  }
+
+  &--info {
+    border-color: rgba(74, 144, 226, 0.3);
+    
+    .card__header {
+      background: rgba(74, 144, 226, 0.05);
+      border-bottom-color: rgba(74, 144, 226, 0.2);
+    }
+  }
+}
+
+// Data card for statistics and metrics
+.data-card {
+  @include card;
+  padding: $spacing-6;
+  text-align: center;
+  transition: $global-transition;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $global-box-shadow-hover;
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto $spacing-4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $font-size-xl;
+    color: $color-text-inverse;
+    background: $color-primary-600;
+  }
+
+  &__value {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-2;
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    font-weight: $font-weight-medium;
+  }
+
+  &__trend {
+    margin-top: $spacing-2;
+    font-size: $font-size-xs;
+    
+    &--up {
+      color: $color-success;
+    }
+    
+    &--down {
+      color: $color-error;
+    }
+  }
+}
+
+// Legacy content box mappings
+.content-box-blue,
+.content-box-gray,
+.content-box-green,
+.content-box-purple,
+.content-box-red,
+.content-box-yellow {
+  @extend .card;
+  padding: $spacing-4;
+  margin-bottom: $spacing-6;
+}
+
+.content-box-blue {
+  @extend .card--info;
+}
+
+.content-box-gray {
+  border-color: $color-neutral-400;
+  background: $color-neutral-100;
+}
+
+.content-box-green {
+  @extend .card--success;
+}
+
+.content-box-purple {
+  border-color: rgba(142, 68, 173, 0.3);
+  background: rgba(142, 68, 173, 0.05);
+}
+
+.content-box-red {
+  @extend .card--danger;
+}
+
+.content-box-yellow {
+  @extend .card--warning;
+}
+
+// Table data card (legacy mapping)
+.table-data {
+  @extend .card;
+  margin-bottom: $spacing-6;
+  padding: 0;
+  border-top: 3px solid $color-primary-700;
+  
+  .table-header {
+    @extend .card__header;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-semibold;
+  }
+  
+  .table-content {
+    @extend .card__body;
+    font-size: $font-size-sm;
+    
+    table {
+      margin-top: $spacing-4;
+    }
+  }
+} 

@@ -1,0 +1,17 @@
+// ==========================================================================
+// MEDIA - MEDIA OBJECT
+// ==========================================================================
+
+.media {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-4;
+}
+
+.media__object {
+  flex-shrink: 0;
+}
+
+.media__body {
+  flex: 1;
+} 

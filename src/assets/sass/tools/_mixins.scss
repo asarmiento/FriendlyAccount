@@ -1,0 +1,152 @@
+// ==========================================================================
+// MIXINS - REUSABLE STYLE PATTERNS
+// ==========================================================================
+
+// Media query mixins
+@mixin media-up($breakpoint) {
+  @if $breakpoint == xs {
+    @content;
+  } @else if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  } @else if $breakpoint == 2xl {
+    @media (min-width: $breakpoint-2xl) { @content; }
+  }
+}
+
+@mixin media-down($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-sm - 1px}) { @content; }
+  } @else if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-md - 1px}) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: #{$breakpoint-lg - 1px}) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-xl - 1px}) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-2xl - 1px}) { @content; }
+  }
+}
+
+// Button mixins
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: $global-radius;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: $global-transition;
+  cursor: pointer;
+  line-height: 1;
+
+  &:focus {
+    outline: 2px solid $color-border-focus;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-size($size) {
+  @if $size == xs {
+    padding: $spacing-1 $spacing-3;
+    font-size: $font-size-xs;
+  } @else if $size == sm {
+    padding: $spacing-2 $spacing-4;
+    font-size: $font-size-sm;
+  } @else if $size == base {
+    padding: $spacing-3 $spacing-6;
+    font-size: $font-size-base;
+  } @else if $size == lg {
+    padding: $spacing-4 $spacing-8;
+    font-size: $font-size-lg;
+  }
+}
+
+@mixin button-variant($bg-color, $text-color: $color-text-inverse) {
+  background-color: $bg-color;
+  color: $text-color;
+
+  &:hover:not(:disabled) {
+    background-color: darken($bg-color, 8%);
+    transform: translateY(-1px);
+    box-shadow: $global-box-shadow-hover;
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: $global-box-shadow;
+  }
+}
+
+// Card mixin
+@mixin card {
+  background: $color-bg-primary;
+  border: $global-border-width solid $color-border-secondary;
+  border-radius: $global-radius;
+  box-shadow: $global-box-shadow;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: $global-box-shadow-hover;
+  }
+}
+
+// Input mixin
+@mixin input-base {
+  width: 100%;
+  padding: $spacing-3 $spacing-4;
+  border: $global-border-width solid $color-border-primary;
+  border-radius: $global-radius;
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  transition: $global-transition;
+  background-color: $color-bg-primary;
+
+  &:focus {
+    border-color: $color-border-focus;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 96, 141, 0.1);
+  }
+
+  &::placeholder {
+    color: $color-text-tertiary;
+  }
+
+  &:disabled {
+    background-color: $color-bg-tertiary;
+    color: $color-text-tertiary;
+    cursor: not-allowed;
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Visually hidden (for accessibility)
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+} 

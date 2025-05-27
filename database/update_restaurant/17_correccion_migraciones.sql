@@ -1,9 +1,0 @@
-UPDATE `migrations` SET `migration`='2015_06_16_000001_create_schools_table' WHERE `migration`='2015_06_16_205706_create_schools_table';
-UPDATE `migrations` SET `migration`='2015_06_16_000002_create_type_users_table' WHERE `migration`='2015_06_16_205754_create_type_users_table';
-UPDATE `migrations` SET `migration`='2015_06_16_000003_create_users_table' WHERE `migration`='2015_06_16_205755_create_users_table';
-UPDATE `migrations` SET `migration`='2015_06_16_000004_create_tasks_table' WHERE `migration`='2015_06_16_205853_create_tasks_table';
-UPDATE `migrations` SET `migration`='2015_06_16_000005_create_students_table' WHERE `migration`='2015_06_16_205914_create_students_table';
-UPDATE `migrations` SET `migration`='2015_06_16_000006_create_types_table' WHERE `migration`='2015_06_16_205933_create_types_table';
-UPDATE `migrations` SET `migration`='2015_06_16_000007_create_banks_table' WHERE `migration`='2015_06_16_205947_create_banks_table';
-UPDATE `migrations` SET `migration`='2015_06_16_000008_create_payment_froms_table' WHERE `migration`='2015_06_16_210008_create_payment_froms_table';
-UPDATE `migrations` SET `migration`='2015_06_16_000009_create_catalogs_table' WHERE `migration`='2015_06_17_010347_create_catalogs_table';

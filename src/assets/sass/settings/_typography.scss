@@ -1,0 +1,49 @@
+// ==========================================================================
+// TYPOGRAPHY - CORPORATE TYPE SYSTEM
+// ==========================================================================
+
+// Font families
+$font-family-primary: 'Inter', 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif !default;
+$font-family-secondary: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif !default;
+$font-family-mono: 'Fira Code', 'Consolas', 'Monaco', monospace !default;
+
+// Font weights
+$font-weight-light: 300 !default;
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+
+// Base font settings
+$font-size-base: 16px !default;
+$line-height-base: 1.5 !default;
+$letter-spacing-base: -0.01em !default;
+
+// Type scale (modular scale: 1.250 - Major Third)
+$font-size-xs: 0.75rem !default;    // 12px
+$font-size-sm: 0.875rem !default;   // 14px
+$font-size-base: 1rem !default;     // 16px
+$font-size-lg: 1.125rem !default;   // 18px
+$font-size-xl: 1.25rem !default;    // 20px
+$font-size-2xl: 1.5rem !default;    // 24px
+$font-size-3xl: 1.875rem !default;  // 30px
+$font-size-4xl: 2.25rem !default;   // 36px
+$font-size-5xl: 3rem !default;      // 48px
+$font-size-6xl: 3.75rem !default;   // 60px
+
+// Line heights
+$line-height-tight: 1.25 !default;
+$line-height-normal: 1.5 !default;
+$line-height-relaxed: 1.75 !default;
+
+// Letter spacing
+$letter-spacing-tight: -0.025em !default;
+$letter-spacing-normal: 0 !default;
+$letter-spacing-wide: 0.025em !default;
+
+// Heading defaults
+$headings-font-family: $font-family-secondary !default;
+$headings-font-weight: $font-weight-semibold !default;
+$headings-line-height: $line-height-tight !default;
+$headings-color: $color-text-primary !default;
+$headings-margin-bottom: 0.5em !default; 
